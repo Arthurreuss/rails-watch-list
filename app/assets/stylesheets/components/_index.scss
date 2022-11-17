@@ -3,3 +3,88 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+.banner {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)), asset-url("cinema_image.jpeg");
+  width: 100vw;
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
+  z-index: 100;
+}
+
+.banner-list {
+  width: 100vw;
+  height: 65vh;
+}
+
+.img-list {
+  width: 100vw;
+  height: 50vh;
+  object-fit: cover;
+  margin-bottom: 20px;
+  position: absolute
+}
+
+#relative-h1 {
+  position: relative;
+  bottom: 75px;
+  left: 50px;
+}
+
+.list-card {
+  padding: 10vw;
+  margin: 10vh;
+}
+
+.img-list-card {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+
+}
+
+.logo {
+  background-image: asset-url("popcorn.webp");
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  margin: auto;
+  width: 90vw;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 5vw;
+  z-index: 1000;
+}
+
+.con {
+  width: 100vw;
+  margin-right: 0;
+  overflow: scroll;
+}
+
+.con-list {
+  width: 80vw;
+  margin: auto;
+}
+
+.card-index {
+  width: 25vw;
+  height: 25vw;
+  display: inline-flex;
+  flex: 0 0 30%;
+}
+
+.card-index-1 {
+  width: 25vw;
+  height: 25vw;
+  display: inline-flex;
+  flex: 0 0 30%;
+  margin-left: 10vw;
+}

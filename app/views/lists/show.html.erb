@@ -1,0 +1,23 @@
+<div class="banner-list">
+ <div class="navbar relative">
+    <div class="logo"></div>
+    <div>
+      <%= link_to "Create new Bookmark", new_list_bookmark_path(@list), class: "btn btn-primary"%>
+      <%= link_to "Go Back to all Lists", lists_path, class: "btn btn-primary"%>
+    </div>
+  </div>
+  <img class="img-list"src=<%= @list.img_url %> alt="">
+  <div><h1 id="relative-h1"><%= @list.name %></h1>
+  </div>
+
+</div>
+<div class="con-list">
+  <% @list.bookmarks.each do |bookmark| %>
+  <div class="card list-card">
+    <h2><%= bookmark.movie.title %></h2>
+    <p><%= bookmark.comment %></p>
+    <img class="img-list-card" src=<%= bookmark.img_url %> alt="">
+    <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete}, class: "btn btn-primary" %>
+  </div>
+  <% end %>
+</div>
