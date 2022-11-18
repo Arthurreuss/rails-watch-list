@@ -5,18 +5,25 @@
   </div>
 </div>
 <div class="con d-flex flex-direction-row">
-    <div class="card p-3 mt-3 me-3 mb-3 card-index-1 ">
-    <img src=<%= @lists.first.img_url %> alt="">
-    <h2><%= @lists.first.name %></h2>
-    <%= link_to "See details", list_path(@lists.first), class: "btn btn-primary"%>
-    <%= link_to "Delete", list_path(@lists.first), data: {turbo_method: :delete} %>
-    </div>
-  <% @lists[1..-1].each do |list| %>
-    <div class="card p-3 m-3 card-index">
-    <img src=<%= list.img_url %> alt="">
-    <h2><%= list.name %></h2>
-    <%= link_to "See details", list_path(list), class: "btn btn-primary"%>
-    <%= link_to "Delete", list_path(list), data: {turbo_method: :delete} %>
-    </div>
+    <% if @lists.first.present? %>
+      <div class="card p-3 mt-3 me-3 mb-3 card-index-1 ">
+      <% if @lists.first.photo.present? %>
+      <%= cl_image_tag @lists.first.photo.key, crop: :fill, class: "img-lists" %>
+      <% end %>
+      <h2><%= @lists.first.name %></h2>
+      <%= link_to "See details", list_path(@lists.first), class: "btn btn-primary"%>
+      <%= link_to "Delete", list_path(@lists.first), data: {turbo_method: :delete} %>
+      </div>
+
+    <% @lists[1..-1].each do |list| %>
+      <div class="card p-3 m-3 card-index">
+      <% if list.photo.present? %>
+      <%= cl_image_tag list.photo.key, crop: :fill, class: "img-lists" %>
+      <% end %>
+      <h2><%= list.name %></h2>
+      <%= link_to "See details", list_path(list), class: "btn btn-primary"%>
+      <%= link_to "Delete", list_path(list), data: {turbo_method: :delete} %>
+      </div>
+    <% end %>
   <% end %>
 </div>
