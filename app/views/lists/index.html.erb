@@ -6,7 +6,7 @@
 </div>
 <div class="con d-flex flex-direction-row">
     <% if @lists.first.present? %>
-      <div class="card p-3 mt-3 me-3 mb-3 card-index-1 ">
+      <div class="card p-3 mt-3 me-3 mb-3 card-index-1">
       <% if @lists.first.photo.present? %>
       <%= cl_image_tag @lists.first.photo.key, crop: :fill, class: "img-lists" %>
       <% end %>

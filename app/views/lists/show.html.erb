@@ -1,4 +1,4 @@
-<div class="banner-list">
+<div class="banner-list" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @list.photo.key, crop: :fill %>')">
  <div class="navbar relative">
     <div class="logo"></div>
     <div>
@@ -6,11 +6,10 @@
       <%= link_to "Go Back to all Lists", lists_path, class: "btn btn-primary"%>
     </div>
   </div>
-  <% if @list.photo.present? %>
-    <%= cl_image_tag @list.photo.key, crop: :fill, class: "img-list" %>
-  <% end %>
-  <div><h1 id="relative-h1"><%= @list.name %></h1>
-  </div>
+  <%# if @list.photo.present? %>
+    <%#= cl_image_tag @list.photo.key, crop: :fill, class: "img-list" %>
+  <%# end %>
+  <h1 id="relative-h1"><%= @list.name %></h1>
 
 </div>
 <div class="con-list">
